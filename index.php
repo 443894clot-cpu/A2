@@ -46,8 +46,8 @@ function mostrarCarpeta($ruta, $url = '')
 
     foreach ($archivos as $archivo) {
 
-        // Ignorar . y ..
-        if ($archivo === "." || $archivo === "..") {
+        // Ignorar archivos y carpetas ocultas (.git, .env, etc.)
+        if (str_starts_with($archivo, ".")) {
             continue;
         }
 
